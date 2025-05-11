@@ -1,0 +1,112 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">Ferrari F80 (Type F250)</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Estimated Price: $2.5M – $3.0M</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car6.jpg' %}"
+         alt="Ferrari F80 (Type F250)"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The Ferrari F80 (Type F250) is an unofficial concept hypercar, designed by Adriano Raeli and conceptualized in 2014. This cutting-edge design was aimed at surpassing the Ferrari LaFerrari, blending advanced hybrid powertrain technology with radical aerodynamics and luxurious, performance-focused features.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('design')" class="hover:underline" id="tab-design">Design & Exterior</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior</button>
+      <button onclick="showTab('technology')" class="hover:underline" id="tab-technology">Technology</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The Ferrari F80 uses a hybrid powertrain combining a 3.0L twin-turbo V6 engine with electric motors to deliver breathtaking performance:</p>
+      <ul>
+        <li>Engine: 3.0L twin-turbocharged V6 (900 PS / 662 kW / 888 hp)</li>
+        <li>Electric Motors: Three electric motors (300 PS / 221 kW / 296 hp)</li>
+        <li>Total Combined Output: 1,200 PS (883 kW / 1,184 hp)</li>
+        <li>Transmission: 7-speed dual-clutch automatic (DCT)</li>
+        <li>Drivetrain: Rear-wheel drive</li>
+        <li>0-60 mph: ~2.2 seconds</li>
+        <li>Top Speed: ~310 mph (499 km/h)</li>
+        <li>Weight: ~800 kg (1,764 lbs)</li>
+        <li>Power-to-Weight Ratio: ~1.5 hp/kg</li>
+      </ul>
+    </div>
+
+    <div id="design" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Design & Exterior</h2>
+      <p>The F80 concept is designed for ultimate performance, with a sleek, aerodynamic exterior inspired by Formula 1 cars and stealth fighter jets:</p>
+      <ul>
+        <li>Body Style: 2-door coupe with full carbon fiber body and monocoque chassis</li>
+        <li>Doors: Butterfly-style opening for futuristic access</li>
+        <li>Front End: Low-slung with aggressive air intakes</li>
+        <li>Rear End: Large diffuser, central exhaust, and minimalistic tail lights</li>
+        <li>Wheels: Lightweight alloy with aerodynamic covers</li>
+        <li>Canopy Roof: Jet-inspired glass cockpit design</li>
+        <li>Aerodynamics: Active front splitters and rear wing (conceptual)</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior Design</h2>
+      <p>Although speculative, the F80's interior is set to be focused on high-performance with advanced tech:</p>
+      <ul>
+        <li>Seats: Carbon fiber racing bucket seats with 5-point harness</li>
+        <li>Dashboard: Fully digital driver display with customizable digital cockpit</li>
+        <li>Materials: Carbon fiber, Alcantara, anodized aluminum</li>
+        <li>Steering Wheel: F1-style with integrated driving mode selectors</li>
+        <li>Infotainment: Minimalist, performance-focused HUD and telemetry</li>
+        <li>Driver Interface: AR HUD (concept), providing real-time track data and assistance</li>
+      </ul>
+    </div>
+
+    <div id="technology" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Technology Features</h2>
+      <p>The Ferrari F80 boasts cutting-edge technologies aimed at enhancing both performance and driver experience:</p>
+      <ul>
+        <li>Hybrid System: Regenerative braking + kinetic recovery (F1-style KERS)</li>
+        <li>Aerodynamics: Automatically adjusting aero flaps and rear wing</li>
+        <li>Telemetry: Live performance data interface (concept)</li>
+        <li>AR HUD: Augmented reality overlay for track assistance</li>
+        <li>Lighting: Laser or OLED headlights and tail lamps (conceptual)</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market</h2>
+      <p>The Ferrari F80 is a concept hypercar, and while not produced, its estimated price would be within the following range:</p>
+      <ul>
+        <li><strong>Estimated Price: $2.5M – $3.0M USD (hypothetical)</strong></li>
+        <li>Target Market: Ultra-wealthy collectors, hypercar enthusiasts, and private track users</li>
+        <li>Estimated Production: Limited to 50-100 units (hypothetical)</li>
+        <li>Competitors: Bugatti Chiron Super Sport, Koenigsegg Jesko Absolut, McLaren Speedtail, Rimac Nevera</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

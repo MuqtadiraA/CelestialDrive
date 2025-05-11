@@ -1,0 +1,113 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2023 Dodge Challenger SRT Hellcat Redeye Widebody</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $70,000</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car9.jpg' %}"
+         alt="2023 Dodge Challenger SRT Hellcat Redeye"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 2023 Dodge Challenger SRT Hellcat Redeye Widebody is the ultimate muscle car that blends raw power with iconic, retro-inspired design. It’s a modern legend in the making, with a wide stance, aggressive styling, and one of the most powerful V8 engines in a production car. Whether you're hitting the drag strip or cruising the streets, the Hellcat Redeye is built to deliver spine-tingling performance with every press of the pedal.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior & Comfort</button>
+      <button onclick="showTab('safety')" class="hover:underline" id="tab-safety">Safety & Driver Assistance</button>
+      <button onclick="showTab('colors')" class="hover:underline" id="tab-colors">Colors & Trims</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The Dodge Challenger SRT Hellcat Redeye Widebody is engineered for those who crave power, speed, and performance:</p>
+      <ul>
+        <li><strong>Engine:</strong> 6.2L Supercharged HEMI V8</li>
+        <li><strong>Horsepower:</strong></li>
+        <ul>
+          <li>Standard Hellcat: 717 hp</li>
+          <li>Redeye: 797 hp</li>
+          <li>Jailbreak: 807+ hp</li>
+        </ul>
+        <li><strong>Transmission:</strong> 6-speed manual or 8-speed automatic</li>
+        <li><strong>0–60 mph:</strong> ~3.4 seconds</li>
+        <li><strong>Top Speed:</strong> ~199 mph</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior & Comfort</h2>
+      <p>The interior of the Challenger SRT Hellcat Redeye maintains the perfect blend of classic muscle car features and modern technology:</p>
+      <ul>
+        <li>Leather performance seats with available heating and ventilation</li>
+        <li>8.4" Uconnect touchscreen with Apple CarPlay and Android Auto</li>
+        <li>Performance pages for real-time horsepower, G-force, and timers</li>
+        <li>Surprisingly spacious for a coupe with usable rear seats</li>
+      </ul>
+    </div>
+
+    <div id="safety" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Safety & Driver Assistance</h2>
+      <p>While the Challenger SRT Hellcat Redeye focuses on performance, it also offers essential safety features to keep you protected on the road:</p>
+      <ul>
+        <li>Available Forward Collision Warning</li>
+        <li>Blind Spot Monitoring with Rear Cross-Path Detection</li>
+        <li>Rear backup camera with parking sensors</li>
+        <li>Adaptive cruise control (optional)</li>
+      </ul>
+    </div>
+
+    <div id="colors" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Colors & Trims</h2>
+      <p>The Challenger SRT Hellcat Redeye Widebody offers several bold color options and trims to suit your style:</p>
+      <ul>
+        <li><strong>Trims:</strong> Hellcat, Hellcat Redeye, Jailbreak, Widebody variants</li>
+        <li><strong>Color Options (standouts include):</strong></li>
+        <ul>
+          <li>F8 Green</li>
+          <li>Go Mango</li>
+          <li>Plum Crazy</li>
+          <li>Octane Red</li>
+          <li>Pitch Black</li>
+          <li>Triple Nickel</li>
+          <li>TorRed</li>
+        </ul>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market</h2>
+      <p>The 2023 Dodge Challenger SRT Hellcat Redeye Widebody is available at an affordable price for a supercharged muscle car:</p>
+      <ul>
+        <li><strong>Starting MSRP (2023):</strong> ~$70,000</li>
+        <li><strong>Fully Loaded:</strong> Up to ~$95,000+</li>
+        <li><strong>Market:</strong> Competing with other performance-oriented muscle cars like the Ford Mustang Shelby GT500 and Chevrolet Camaro ZL1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

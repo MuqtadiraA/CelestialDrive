@@ -1,0 +1,111 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2022–2024 Land Rover Range Rover P530 Autobiography or SE</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $107,000</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car8.jpeg' %}"
+         alt="2022–2024 Land Rover Range Rover P530"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 2022–2024 Land Rover Range Rover P530 is the ultimate luxury SUV that combines refined elegance with extraordinary off-road capability. This flagship SUV from Land Rover maintains its reputation as a luxurious, high-performance vehicle suitable for both urban sophistication and rugged adventure. It features a sleek exterior with innovative design elements and a meticulously crafted interior offering unparalleled comfort.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior & Comfort</button>
+      <button onclick="showTab('safety')" class="hover:underline" id="tab-safety">Safety & Driver Assistance</button>
+      <button onclick="showTab('colors')" class="hover:underline" id="tab-colors">Colors & Trims</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The 2022–2024 Range Rover P530 offers an impressive range of engine options that cater to performance enthusiasts while providing impressive towing and off-road capability:</p>
+      <ul>
+        <li><strong>Engine Options:</strong></li>
+        <ul>
+          <li>3.0L Turbocharged Inline-6 with mild hybrid (395 hp)</li>
+          <li>4.4L Twin-Turbo V8 (523–606 hp)</li>
+          <li>Plug-in Hybrid (PHEV) with ~50 miles electric range</li>
+        </ul>
+        <li>Transmission: 8-speed automatic</li>
+        <li>Drivetrain: All-Wheel Drive (AWD) with Terrain Response 2</li>
+        <li>Towing Capacity: Up to 8,200 lbs</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior & Comfort</h2>
+      <p>The Range Rover P530’s interior is designed to provide an unmatched level of luxury and comfort for both the driver and passengers:</p>
+      <ul>
+        <li>Premium leather, wood, and metal finishes</li>
+        <li>Up to 7-passenger seating (with long-wheelbase option)</li>
+        <li>Executive rear seating with massage, heating, and recline options</li>
+        <li>13.1" curved touchscreen with Pivi Pro infotainment system</li>
+        <li>Optional Meridian Signature Sound System</li>
+      </ul>
+    </div>
+
+    <div id="safety" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Safety & Driver Assistance</h2>
+      <p>The 2022–2024 Range Rover P530 comes equipped with state-of-the-art safety and driver assistance features for enhanced peace of mind on every journey:</p>
+      <ul>
+        <li>Standard adaptive cruise control, blind spot assist, and 3D surround camera</li>
+        <li>Available head-up display, lane keep assist, and driver condition monitor</li>
+        <li>Advanced parking assist and rear traffic monitor</li>
+      </ul>
+    </div>
+
+    <div id="colors" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Colors & Trims</h2>
+      <p>The Range Rover P530 offers a range of striking color options and trims to suit your personal style:</p>
+      <ul>
+        <li><strong>Color Options:</strong></li>
+        <ul>
+          <li>Santorini Black</li>
+          <li>Fuji White</li>
+          <li>Eiger Grey</li>
+          <li>Sunset Gold</li>
+          <li>Belgravia Green</li>
+          <li>Custom SV Bespoke Palette</li>
+        </ul>
+        <li><strong>Trims:</strong> SE, Autobiography, SV, First Edition</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market</h2>
+      <p>The 2022–2024 Range Rover P530 is available in several trims, with the base model starting at a competitive price:</p>
+      <ul>
+        <li><strong>Starting MSRP (2025):</strong> ~$107,000</li>
+        <li><strong>Higher trims (Autobiography/SV):</strong> Up to ~$220,000+ depending on customizations</li>
+        <li><strong>Market:</strong> Competing with other luxury SUVs like the BMW X7, Mercedes-Benz GLS, and Porsche Cayenne</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

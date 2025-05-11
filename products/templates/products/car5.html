@@ -1,0 +1,98 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2019 Volkswagen Beetle</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $21,000</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car5.jpg' %}"
+         alt="2019 Volkswagen Beetle"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 2019 VW Beetle marked the end of an era—the last year for this modern version of the legendary Beetle. Volkswagen bid farewell with a special Final Edition, offering a more refined look while staying true to the iconic shape that has been loved for decades.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('trims')" class="hover:underline" id="tab-trims">Trims & Models</button>
+      <button onclick="showTab('design')" class="hover:underline" id="tab-design">Design & Features</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The 2019 Beetle comes equipped with a 2.0-liter turbocharged 4-cylinder engine (TSI), offering:</p>
+      <ul>
+        <li>174 hp</li>
+        <li>184 lb-ft of torque</li>
+        <li>6-speed automatic transmission with Tiptronic and Sport mode</li>
+        <li>Front-wheel drive (FWD)</li>
+        <li>Fuel Economy: 26 mpg city / 33 mpg highway</li>
+      </ul>
+    </div>
+
+    <div id="trims" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Trims & Models</h2>
+      <p>The 2019 VW Beetle is available in several trims to suit different needs:</p>
+      <ul>
+        <li><strong>S:</strong> The base model with solid features.</li>
+        <li><strong>SE:</strong> The mid-tier model with upgraded comfort and tech features.</li>
+        <li><strong>Final Edition SE:</strong> A special edition with unique touches.</li>
+        <li><strong>Final Edition SEL:</strong> The top-tier model with premium materials and exclusive styling.</li>
+      </ul>
+    </div>
+
+    <div id="design" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Design & Features</h2>
+      <p>The 2019 Beetle blends retro styling with modern touches, including:</p>
+      <ul>
+        <li>Rounded body shape with optional LED headlights and taillights</li>
+        <li>Available panoramic sunroof</li>
+        <li>Rearview camera</li>
+        <li>Final Edition models come in exclusive colors like Stonewashed Blue and Safari Uni</li>
+      </ul>
+      <p>Interior features include:</p>
+      <ul>
+        <li>Retro-modern dashboard design</li>
+        <li>Available two-tone leatherette seats</li>
+        <li>Heated front seats</li>
+        <li>Ambient interior lighting (higher trims)</li>
+        <li>6.3-inch touchscreen infotainment system with Bluetooth compatibility</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing</h2>
+      <p>The pricing for the 2019 Volkswagen Beetle varies by trim level:</p>
+      <ul>
+        <li><strong>S:</strong> Starting at $21,000</li>
+        <li><strong>SE:</strong> Starting at $23,000</li>
+        <li><strong>Final Edition SE:</strong> Around $23,000</li>
+        <li><strong>Final Edition SEL:</strong> Around $26,000</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

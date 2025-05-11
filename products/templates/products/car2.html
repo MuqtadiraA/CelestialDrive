@@ -1,0 +1,91 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2025 Hyundai SANTA FE</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $34,300</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car2.webp' %}"
+         alt="2025 Hyundai SANTA FE"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The all-new 2025 Hyundai SANTA FE blends rugged style with family-friendly practicality. With a bold design and spacious interior, this SUV is ready for both city streets and weekend adventures. Featuring hybrid and turbocharged engine options, the SANTA FE offers versatility for all lifestyles.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior</button>
+      <button onclick="showTab('safety')" class="hover:underline" id="tab-safety">Safety</button>
+      <button onclick="showTab('colors')" class="hover:underline" id="tab-colors">Colors</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The Hyundai SANTA FE offers a choice of gasoline and hybrid engine options:</p>
+      <ul>
+        <li>Gasoline: Up to 25 MPG city / 29 MPG highway</li>
+        <li>Hybrid: Up to 36 MPG combined (estimated)</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior & Comfort</h2>
+      <p>Spacious 3-row seating for up to 7 passengers, along with:</p>
+      <ul>
+        <li>Class-leading rear cargo space with flat-folding seats</li>
+        <li>12.3-inch digital cluster and 12.3-inch infotainment touchscreen</li>
+        <li>Eco-friendly interior materials, including recycled materials and optional vegan leather</li>
+        <li>Available panoramic sunroof</li>
+      </ul>
+    </div>
+
+    <div id="safety" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Safety & Driver Assistance</h2>
+      <p>The SANTA FE comes equipped with Hyundai's SmartSense Suite, which includes:</p>
+      <ul>
+        <li>Forward Collision-Avoidance Assist (FCA)</li>
+        <li>Blind-Spot View Monitor</li>
+        <li>Remote Smart Parking Assist (RSPA)</li>
+        <li>Highway Driving Assist 2 (HDA2)</li>
+        <li>Rear Cross-Traffic Collision-Avoidance Assist</li>
+        <li>Safe Exit Assist (SEA)</li>
+        <li>360-degree Surround View Monitor</li>
+      </ul>
+    </div>
+
+    <div id="colors" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Colors & Trims</h2>
+      <p>Exterior colors include:</p>
+      <ul>
+        <li>Ecotronic Gray, Terracotta Orange, Earthy Brass Matte, Abyss Black Pearl, and more</li>
+      </ul>
+      <p>Trims available:</p>
+      <ul>
+        <li>SE, SEL, XRT (off-road inspired), Limited, Calligraphy (luxury-focused)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

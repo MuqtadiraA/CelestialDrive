@@ -1,0 +1,68 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2025 Mercedes-Benz S-Class (S 580 4MATIC)</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $129,000</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car1.jpg' %}"
+         alt="2025 Mercedes-Benz S-Class"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The Mercedes-Benz S-Class is the gold standard of full-size luxury sedans, blending cutting-edge technology
+    with world-class comfort and an effortless driving experience.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior</button>
+      <button onclick="showTab('safety')" class="hover:underline" id="tab-safety">Safety</button>
+      <button onclick="showTab('colors')" class="hover:underline" id="tab-colors">Colors</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>4.0L V8 biturbo engine with EQ Boost, 496 hp and 516 lb-ft of torque, 9-speed automatic transmission, and standard 4MATIC all-wheel drive.</p>
+      <p class="mt-2 text-sm text-gray-500">Fuel Efficiency: Estimated 17 MPG city / 25 MPG highway</p>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior & Comfort</h2>
+      <p>Heated and ventilated Nappa leather seats, massaging front and rear seats, ambient lighting, 12.8” OLED touchscreen with MBUX system, and rear executive lounge seating (optional).</p>
+    </div>
+
+    <div id="safety" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Safety & Driver Assistance</h2>
+      <p>Standard Driver Assistance Package with Active Distance Assist DISTRONIC, Active Steering Assist, automatic emergency braking, blind spot assist, and more.</p>
+    </div>
+
+    <div id="colors" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Colors & Trims</h2>
+      <p>Available in Obsidian Black, Nautical Blue, Cirrus Silver, Selenite Grey, and more.</p>
+      <p>Trims include Luxury Line and AMG Line with customizable interior finishes in Walnut, Black Piano Lacquer, or Metal Weave.</p>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

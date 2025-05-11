@@ -1,0 +1,76 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">1995 Mazda MX-5 Miata</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $5,827</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car4.jpg' %}"
+         alt="1995 Mazda MX-5 Miata"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 1995 Mazda MX-5 Miata is a timeless classic, representing the first generation of Miatas (NA). Its lightweight build, fantastic handling, and roadster styling make it one of the most iconic and affordable sports cars ever built.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('trims')" class="hover:underline" id="tab-trims">Trims & Models</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>Under the hood, the 1995 Miata is powered by a 1.8-liter DOHC inline-4 engine, delivering:</p>
+      <ul>
+        <li>128 hp @ 6,500 rpm</li>
+        <li>110 lb-ft torque @ 5,500 rpm</li>
+        <li>0–60 mph in approximately 8 seconds</li>
+        <li>Top Speed: Around 120 mph</li>
+      </ul>
+      <p>The car is paired with a standard 5-speed manual transmission, with an optional 4-speed automatic transmission.</p>
+    </div>
+
+    <div id="trims" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Trims & Models</h2>
+      <p>The 1995 Miata is available in several trims, each offering its unique features:</p>
+      <ul>
+        <li><strong>Base:</strong> The bare-bones version, perfect for purists who want the true driving experience.</li>
+        <li><strong>M Edition:</strong> A special edition with upgraded interior, leather seats, unique paint (Merlot Mica in '95), and a Nardi wood shift knob.</li>
+        <li><strong>R Package:</strong> A track-focused version with a stiffer suspension, Torsen limited-slip differential, and no power steering or air conditioning.</li>
+        <li><strong>L Package:</strong> A comfort-focused version with power windows, power steering, and a leather-wrapped steering wheel.</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing</h2>
+      <p>The pricing for the 1995 Mazda MX-5 Miata varies significantly based on condition, mileage, and trim/model:</p>
+      <ul>
+        <li>Starting Price: $5,827</li>
+        <li>Higher-End Models / Restored Versions: Up to $16,200</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

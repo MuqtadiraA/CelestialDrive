@@ -1,0 +1,102 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">2025 BMW 7 Series (740i)</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $98,400</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car7.jpg' %}"
+         alt="2025 BMW 7 Series 740i"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 2025 BMW 7 Series (740i) is a luxury sedan that defines modern sophistication and performance. With cutting-edge technology, a powerful engine, and a focus on comfort and safety, the 7 Series promises to elevate the driving experience for both drivers and passengers.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior & Comfort</button>
+      <button onclick="showTab('safety')" class="hover:underline" id="tab-safety">Safety & Driver Assistance</button>
+      <button onclick="showTab('colors')" class="hover:underline" id="tab-colors">Colors & Trims</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>The 2025 BMW 7 Series (740i) delivers a blend of luxury and performance with its powerful engine and efficient powertrain:</p>
+      <ul>
+        <li>Engine: 3.0L BMW TwinPower Turbo inline 6-cylinder</li>
+        <li>Horsepower: 375 hp</li>
+        <li>Torque: 398 lb-ft</li>
+        <li>Transmission: 8-speed automatic transmission</li>
+        <li>Drivetrain: Rear-wheel drive (xDrive available)</li>
+        <li>Fuel Efficiency: Estimated 25 MPG city / 31 MPG highway</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior & Comfort</h2>
+      <p>The 2025 BMW 7 Series is designed with luxury and comfort in mind, offering top-tier materials and advanced technology:</p>
+      <ul>
+        <li>Merino leather upholstery</li>
+        <li>Floating curved display with iDrive 8.5</li>
+        <li>Reclining rear seats</li>
+        <li>Available rear-seat theater screen (31")</li>
+        <li>Multi-contour seats with ventilation and massage functions</li>
+      </ul>
+    </div>
+
+    <div id="safety" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Safety & Driver Assistance</h2>
+      <p>The BMW 7 Series comes equipped with advanced safety features for enhanced driver assistance and peace of mind:</p>
+      <ul>
+        <li>Driving Assistance Professional Package</li>
+        <li>Adaptive cruise control</li>
+        <li>Lane keeping assist</li>
+        <li>Evasive steering assist</li>
+        <li>Highway Assistant (hands-free driving in certain conditions)</li>
+      </ul>
+    </div>
+
+    <div id="colors" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Colors & Trims</h2>
+      <p>The 2025 BMW 7 Series offers a range of stunning exterior colors and trims:</p>
+      <ul>
+        <li><strong>Exterior Colors:</strong> Carbon Black, Brooklyn Grey, Tanzanite Blue II, Frozen Deep Grey (Individual)</li>
+        <li><strong>Trims:</strong> Standard 740i, M Sport, Executive Lounge packages</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market</h2>
+      <p>The 2025 BMW 7 Series (740i) starts at $98,400, offering an entry point into the luxury sedan market with exceptional performance, luxury, and technology:</p>
+      <ul>
+        <li><strong>Starting Price:</strong> $98,400</li>
+        <li><strong>Market Position:</strong> Competing with other luxury sedans like the Mercedes-Benz S-Class and Audi A8</li>
+        <li><strong>Top Trim Options:</strong> M Sport and Executive Lounge packages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

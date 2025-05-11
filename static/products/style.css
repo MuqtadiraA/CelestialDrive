@@ -1,0 +1,363 @@
+/* ===== Base Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+html.dark body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+h1, h2, .navbar a, .dropdown-content a {
+  font-family: 'Anton', sans-serif;
+}
+
+/* General */
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 27px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #061a4c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.navbar a,
+.dropbtn {
+  color: white;
+  padding: 14px 20px;
+  display: block;
+  text-decoration: none;
+  background-color: #061a4c;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover,
+.dropbtn:hover {
+  background-color: #092D85;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #F1C40F; /* Yellow */
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s, left 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ===== Dropdown Menu ===== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1e3a8a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-content a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #3e5c73;
+}
+
+.dropdown-content a:hover {
+  background-color: #3b82f6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 800px;
+  background: url('images/carhome.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  animation: typing 3s steps(30) 1s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ===== Sign In Form ===== */
+.signin-container {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.signin-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 32px;
+  color: #061a4c;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.remember input {
+  margin-right: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #F1C40F; /* Yellow */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== About / News ===== */
+.about,
+.news {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.about h2,
+.news h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.about-text-box {
+  max-width: 800px;
+  margin: 20px auto 0;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.about-text-box p {
+  font-size: 20px !important;
+  line-height: 1.5;
+}
+
+.news-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.car-image {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* ===== Contact ===== */
+.contact {
+  padding: 40px 20px;
+  background-color: #e9ecef;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+.contact button {
+  background-color: #111;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 50px;
+  background-color: #061a4c;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* ===== Utility / Enhancements ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.tab-content {
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}

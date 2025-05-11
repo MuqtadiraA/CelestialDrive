@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About / News - Celestial Drive</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body class="about-page">
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">Celestial Drive</div>
+
+  <div class="nav-item"><a href="{% url 'index' %}">Home</a></div>
+  <div class="nav-item"><a href="{% url 'log' %}">Sign In</a></div>
+  <div class="nav-item"><a href="{% url 'about' %}">About / News</a></div>
+
+  <div class="nav-item dropdown">
+    <button class="dropbtn">Vehicles ▾</button>
+    <div class="dropdown-content">
+      <a href="{% url 'car1' %}">Car 1</a>
+      <a href="{% url 'car2' %}">Car 2</a>
+      <a href="{% url 'car3' %}">Car 3</a>
+      <a href="{% url 'car4' %}">Car 4</a>
+      <a href="{% url 'car5' %}">Car 5</a>
+      <a href="{% url 'car6' %}">Car 6</a>
+      <a href="{% url 'car7' %}">Car 7</a>
+      <a href="{% url 'car8' %}">Car 8</a>
+      <a href="{% url 'car9' %}">Car 9</a>
+      <a href="{% url 'car10' %}">Car 10</a>
+
+      {% if user.is_staff %}
+        <a href="{% url 'product_add' %}">Add Product (Admin)</a>
+        <a href="{% url 'feedback_report' %}">Feedback Report (Admin)</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="nav-item"><a href="{% url 'contact' %}">Contact / Feedback</a></div>
+</nav>
+
+
+
+
+  <!-- About Content -->
+  <section class="section about" style="background: url('{% static 'products/images/background.avif' %}') no-repeat center center fixed; background-size: cover; padding: 40px 20px;">
+    <h2>ABOUT US</h2>
+    <div class="about-text-box">
+      <p>Welcome to Celestial Drive — where luxury meets the road.
+
+        We're a premier vehicle blog dedicated to exploring the world of high-end automobiles. From the latest models by Rolls-Royce and Bentley to groundbreaking innovations by Tesla and Lucid, we cover the most exquisite and performance-driven vehicles on the market.
+        
+        At Celestial Drive, our passion is more than horsepower and price tags, it is about the art, technology, and lifestyle behind every luxury car. Whether you're a seasoned collector, a dreamer with a passion for design, or someone keeping an eye on the future of elite mobility, we bring you in-depth reviews, exclusive industry insights, and stunning visuals that fuel your obsession.
+        
+        Join us on this journey as we spotlight the cars that define elegance, power, and prestige, one drive at a time.</p>
+    </div>
+  </section>
+
+<section class="section news">
+  <h2>NEWS</h2>
+  <div class="news-images">
+    <a href="{% url 'car1' %}" class="car-image">
+      <img src="{% static 'products/images/car1.jpg' %}" alt="Car 1">
+    </a>
+    <a href="{% url 'car2' %}" class="car-image">
+      <img src="{% static 'products/images/car2.webp' %}" alt="Car 2">
+    </a>
+    <a href="{% url 'car3' %}" class="car-image">
+      <img src="{% static 'products/images/car3.jpg' %}" alt="Car 3">
+    </a>
+    <a href="{% url 'car4' %}" class="car-image">
+      <img src="{% static 'products/images/car4.jpg' %}" alt="Car 4">
+    </a>
+  </div>
+</section>
+
+
+  
+<!-- Footer -->
+<footer class="footer">
+    &copy; 2025 Celestial Drive. All rights reserved.
+  </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">1934–1937 Chrysler Airflow</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Restored Models: $45,000 – $110,000 USD</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car10.jpg' %}"
+         alt="1934–1937 Chrysler Airflow"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The Chrysler Airflow, produced from 1934 to 1937, was a groundbreaking vehicle that revolutionized automotive design. It was the first American production car to be designed using aerodynamic principles and wind-tunnel testing, making it a true pioneer in automotive history. Although it wasn’t commercially successful at the time, its innovative design influenced future cars and is now considered one of the most iconic pre-war cars.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('design')" class="hover:underline" id="tab-design">Design & Exterior</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior Features</button>
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Powertrain & Performance</button>
+      <button onclick="showTab('innovation')" class="hover:underline" id="tab-innovation">Innovation & Technology</button>
+      <button onclick="showTab('market')" class="hover:underline" id="tab-market">Cultural & Market Impact</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market Value</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="design" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Design & Exterior</h2>
+      <p>The Chrysler Airflow was designed with a focus on aerodynamics and modernity. Key exterior features include:</p>
+      <ul>
+        <li>Streamlined, rounded grille integrated with the hood</li>
+        <li>Flush-mounted headlights</li>
+        <li>Curved, all-steel body panels</li>
+        <li>Forward-cab design for improved aerodynamics</li>
+        <li>Rear wheel fender skirts (some models)</li>
+        <li>Chrome detailing with horizontal trim lines</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior Features</h2>
+      <p>The Chrysler Airflow's interior was equally impressive, with a focus on luxury, comfort, and space:</p>
+      <ul>
+        <li>Seating for 5–7 passengers</li>
+        <li>Materials like mohair, wool broadcloth, and chrome trim</li>
+        <li>Reclining rear seats (optional)</li>
+        <li>Extra legroom due to the innovative cab-forward layout</li>
+        <li>Rear-seat armrests and folding center armrest</li>
+        <li>Improved soundproofing and insulation for a quieter ride</li>
+      </ul>
+    </div>
+
+    <div id="performance" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Powertrain & Performance</h2>
+      <p>The Chrysler Airflow offered solid performance for its time, with a range of engine options:</p>
+      <ul>
+        <li><strong>Engine Options:</strong></li>
+        <ul>
+          <li>4.9L Inline-8 (Chrysler Series)</li>
+          <li>5.3L Inline-8 (Chrysler Imperial models)</li>
+        </ul>
+        <li><strong>Horsepower:</strong> 115 – 130 hp</li>
+        <li><strong>Transmission:</strong> 3-speed manual with synchromesh</li>
+        <li><strong>Top Speed:</strong> ~95 mph</li>
+        <li><strong>Fuel Economy:</strong> ~14–16 mpg</li>
+        <li><strong>Suspension:</strong> Independent coil spring (front), live axle with leaf springs (rear)</li>
+      </ul>
+    </div>
+
+    <div id="innovation" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Innovation & Technology</h2>
+      <p>The Chrysler Airflow was a pioneer in automotive design, introducing several innovations that would shape the future:</p>
+      <ul>
+        <li>First U.S. car designed with wind-tunnel testing</li>
+        <li>Early adopter of unit-body construction</li>
+        <li>Engine placed over front axle for better weight distribution</li>
+        <li>Improved crash safety with a reinforced body</li>
+        <li>Enhanced ride comfort with a lower center of gravity</li>
+      </ul>
+    </div>
+
+    <div id="market" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Cultural & Market Impact</h2>
+      <p>The Chrysler Airflow was a critical success but a commercial failure, as its futuristic design was too radical for many 1930s consumers:</p>
+      <ul>
+        <li>Initial Reception: Critically praised but commercially unsuccessful</li>
+        <li>Public Resistance: Too radical and futuristic for many at the time</li>
+        <li>Legacy: Influenced future designs like the Lincoln Zephyr and Tucker 48</li>
+        <li>Now a sought-after collectible among pre-war car collectors</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market Value</h2>
+      <p>The Chrysler Airflow has seen its market value increase significantly over time:</p>
+      <ul>
+        <li><strong>Original MSRP (1934–1937):</strong> $1,345 – $1,695 USD</li>
+        <li><strong>Restored Models:</strong> $45,000 – $110,000 USD</li>
+        <li><strong>Concours-Level Condition:</strong> $125,000+</li>
+        <li><strong>Limousine & Imperial Models:</strong> Higher premiums due to rarity</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}

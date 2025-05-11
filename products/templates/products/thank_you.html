@@ -1,0 +1,66 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celestial Drive</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+  
+  
+<nav class="navbar">
+  <div class="logo">Celestial Drive</div>
+
+  <div class="nav-item"><a href="{% url 'index' %}">Home</a></div>
+  <div class="nav-item"><a href="{% url 'log' %}">Sign In</a></div>
+  <div class="nav-item"><a href="{% url 'about' %}">About / News</a></div>
+
+  <div class="nav-item dropdown">
+    <button class="dropbtn">Vehicles ▾</button>
+    <div class="dropdown-content">
+      <a href="{% url 'car1' %}">Car 1</a>
+      <a href="{% url 'car2' %}">Car 2</a>
+      <a href="{% url 'car3' %}">Car 3</a>
+      <a href="{% url 'car4' %}">Car 4</a>
+      <a href="{% url 'car5' %}">Car 5</a>
+      <a href="{% url 'car6' %}">Car 6</a>
+      <a href="{% url 'car7' %}">Car 7</a>
+      <a href="{% url 'car8' %}">Car 8</a>
+      <a href="{% url 'car9' %}">Car 9</a>
+      <a href="{% url 'car10' %}">Car 10</a>
+
+      {% if user.is_staff %}
+        <a href="{% url 'product_add' %}">Add Product (Admin)</a>
+        <a href="{% url 'feedback_report' %}">Feedback Report (Admin)</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="nav-item"><a href="{% url 'contact' %}">Contact / Feedback</a></div>
+</nav>
+
+
+
+
+
+
+
+    <h1>Thank you for contacting us!</h1>
+    <p>We’ll get back to you soon.</p>
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+<footer class="footer">
+  &copy; 2025 Celestial Drive. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="max-w-5xl mx-auto p-6 mt-10">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-primary">1967 Chevrolet Corvette Stingray Convertible L71</h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 mt-2">Starting at $4,438 (1967), Current Value: $175,000 - $400,000+</p>
+  </div>
+
+  <div class="mb-6">
+    <img src="{% static 'products/images/car3.jpg' %}"
+         alt="1967 Chevrolet Corvette Stingray"
+         class="rounded-xl shadow-lg w-full object-cover">
+  </div>
+
+  <p class="text-lg mb-6 leading-relaxed">
+    The 1967 Corvette Stingray Convertible L71 is the epitome of the C2 Corvette generation. Known for its striking curves, bold performance, and unmistakable muscle car presence, the '67 Stingray is a legendary icon. The L71 variant, with its 427 cubic-inch V8 and Tri-Power carburetors, remains one of the most sought-after classic Corvettes ever produced.
+  </p>
+
+  <!-- Tabs -->
+  <div class="mb-6">
+    <div class="flex space-x-4 border-b border-primary pb-2 mb-4 text-primary font-semibold">
+      <button onclick="showTab('performance')" class="hover:underline" id="tab-performance">Performance</button>
+      <button onclick="showTab('design')" class="hover:underline" id="tab-design">Exterior Design</button>
+      <button onclick="showTab('interior')" class="hover:underline" id="tab-interior">Interior</button>
+      <button onclick="showTab('pricing')" class="hover:underline" id="tab-pricing">Pricing & Market Value</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="performance" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Performance & Powertrain</h2>
+      <p>Under the hood, the L71 variant packs a 427 cubic-inch V8 engine with Tri-Power carburetors, delivering:</p>
+      <ul>
+        <li>435 hp @ 5800 rpm</li>
+        <li>460 lb-ft torque @ 4000 rpm</li>
+        <li>0–60 mph in approximately 4.8 seconds</li>
+        <li>Top Speed: 140 mph</li>
+      </ul>
+      <p>Paired with a 4-speed manual Muncie gearbox, the driving experience is pure muscle car adrenaline.</p>
+    </div>
+
+    <div id="design" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Exterior Design</h2>
+      <p>The '67 Stingray's design is a testament to classic American muscle with its sleek, aggressive styling:</p>
+      <ul>
+        <li>Body Style: 2-door convertible</li>
+        <li>Unique "stinger" hood scoop with contrasting paint</li>
+        <li>Refined side vents and sleeker fender flares</li>
+        <li>Optional bolt-on aluminum wheels</li>
+        <li>Flip-up concealed headlights for a clean front-end design</li>
+        <li>Convertible top options: Vinyl or optional black/dark blue canvas</li>
+      </ul>
+    </div>
+
+    <div id="interior" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Interior</h2>
+      <p>Inside, the Corvette Stingray delivers a vintage yet luxurious experience:</p>
+      <ul>
+        <li>Optional leather-trimmed seats in black, red, saddle, or teal</li>
+        <li>Classic dual-cowl dashboard with center-mounted analog clock</li>
+        <li>Optional teakwood steering wheel</li>
+        <li>AM/FM push-button radio for classic tunes</li>
+        <li>Dash-mounted tachometer and optional factory air conditioning</li>
+      </ul>
+    </div>
+
+    <div id="pricing" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Pricing & Market Value</h2>
+      <p>Originally priced at ~$4,438 USD in 1967, the Corvette Stingray Convertible L71 now commands a premium in the market:</p>
+      <ul>
+        <li>Good Condition: $175,000 – $200,000</li>
+        <li>Fully Restored / Showroom Condition: $250,000 – $350,000+</li>
+        <li>Matching Numbers / Rare Options (e.g., side pipes, factory hardtop): $400,000+</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-10">
+    <a href="{% url 'contact' %}" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-all">
+      Contact for More Info
+    </a>
+  </div>
+</main>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+  }
+</script>
+{% endblock %}
