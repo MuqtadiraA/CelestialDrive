@@ -1,0 +1,26 @@
+{% extends "products/base.html" %}
+
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="signin-container">
+  <h2>Create an Account</h2>
+  <form method="post">
+  {% csrf_token %}
+  
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required>
+
+  <button type="submit">Sign Up</button>
+
+  <p>Already have an account? <a href="{% url 'signin' %}">Sign In</a></p>
+
+</div>
+{% endblock %}

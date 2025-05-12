@@ -1,11 +1,18 @@
 from django.urls import path, include
 from products import views
+from products.views import signup_view
+
 
 urlpatterns = [
     path('', views.index, name="index"),
     path("about/", views.about, name="about"),
     path("signin/", views.signin, name="log"),
     path('contact/', views.contact_view, name='contact'),
+    path("signup/", views.signup_view, name="signup"),
+    path("signin/", views.signin, name="signin"),
+
+
+
 
   # Car pages
     path('cars/car1/', views.car1, name='car1'),
@@ -18,4 +25,5 @@ urlpatterns = [
     path('cars/car8/', views.car8, name='car8'),
     path('cars/car9/', views.car9, name='car9'),
     path('cars/car10/', views.car10, name='car10'),
+
 ]

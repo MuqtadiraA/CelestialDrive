@@ -34,10 +34,6 @@
       <a href="{% url 'car9' %}">Car 9</a>
       <a href="{% url 'car10' %}">Car 10</a>
 
-      {% if user.is_staff %}
-        <a href="{% url 'product_add' %}">Add Product (Admin)</a>
-        <a href="{% url 'feedback_report' %}">Feedback Report (Admin)</a>
-      {% endif %}
     </div>
   </div>
 
@@ -68,8 +64,10 @@
       <button type="submit">Sign In</button>
 
       <div class="signup-link">
-        Don't have an account? <a href="#">Sign up</a>
-      </div>
+  Don't have an account?<a href="{% url 'signup' %}">Sign up</a>
+
+</div>
+
     </form>
   </div>
 

@@ -2,6 +2,13 @@ from urllib import request
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ContactForm
+from django.shortcuts import redirect
+from django.views.generic import ListView
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+
 
 
 # Create your views here.
@@ -57,3 +64,15 @@ def contact_view(request):
     else:
         form = ContactForm()
     return render(request, 'products/contact.html', {'form': form})
+
+def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        return redirect('signin')  # Adjust if your login page is named differently
+
+    return render(request, 'products/signup.html')
